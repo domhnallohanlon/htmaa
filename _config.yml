@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title: Site Title
-locale: en_US
-description: Describe your website here.
+title: How to Make an App
+locale: en_UK
+description: CTYI Online course in App Design and Development.
 logo: site-logo.png
 search: true
 url: 
@@ -32,13 +32,13 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Your Name
+  name: Domhnall O'Hanlon
   avatar: bio-photo.jpg
-  email: you@email.com
+  email: domhnall@ctyionline.net
   disqus-shortname:
-  twitter: #username
+  twitter: domhnallohanlon
   facebook: #username
-  github: #username
+  github: domhnallohanlon
   stackexchange: #http://stackoverflow.com/users/123456/username
   linkedin: #username
   instagram: #username

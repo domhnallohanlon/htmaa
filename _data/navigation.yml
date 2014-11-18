@@ -1,4 +1,6 @@
 # Site navigation links
+- title: CTYI Online
+  url: http://ctyionline.net 
 
 - title: About
   url: /about/
@@ -12,5 +14,5 @@
 - title: Theme Setup
   url: /theme-setup/
 
-- title: Made Mistakes
-  url: http://mademistakes.com
+- title: CTYI Offline
+  url: http://dcu.ie/ctyi
