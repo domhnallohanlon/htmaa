@@ -1,11 +1,104 @@
----
-layout: page
-title: Latest Posts
-excerpt: "A simple and clean responsive Jekyll theme for words and photos."
----
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>How to Make an App</title>
+		<meta name="description" content="A perspective slideshow based on Franklin Ta's CSS matrix3d transforms" />
+		<meta name="keywords" content="perspective, mockup, slideshow, transform, 3d, matrix, css" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/mockup1.css" />
 
-<ul class="post-list">
-{% for post in site.posts limit:10 %} 
-  <li><article><a href="{{ site.url }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></article></li>
-{% endfor %}
-</ul>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+		<script src="assets/js/modernizr.custom.js"></script>
+	</head>
+	<body class="demo-1">
+      <div class="container">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		  <div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="http://www.ctyionline.net">CTYI Online</a>
+			</div>
+		
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Week 1</a></li>
+					<li><a href="#">Week 2</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		  </div>
+		</nav>
+		<div class="container">
+			<div id="wrap" class="wrap">
+				<div class="mockup">
+					<img class="mockup__img" src="assets/img/mockup.jpg" />
+					<div id="mobile" class="mobile">
+						<ul id="slideshow" class="slideshow">
+							<li class="slideshow__item"><img src="assets/img/small/1.png" /></li>
+							<li class="slideshow__item"><img src="assets/img/small/2.png" /></li>
+							<li class="slideshow__item"><img src="assets/img/small/3.png" /></li>
+							<li class="slideshow__item"><img src="assets/img/small/4.png" /></li>
+						</ul>
+					</div>
+					<header class="codrops-header">
+						<h1 class="text-right">How to Make &nbsp;<br> an App &nbsp;</h1>
+					</header>
+				</div>
+			</div>
+		</div><!-- /container -->
+      </div>
+		<script src="assets/js/classie.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			(function() {
+				new Slideshow( document.getElementById( 'slideshow' ) );
+
+				/* Mockup responsiveness */
+				var body = docElem = window.document.documentElement,
+					wrap = document.getElementById( 'wrap' ),
+					mockup = wrap.querySelector( '.mockup' ),
+					mockupWidth = mockup.offsetWidth;
+
+				scaleMockup();
+
+				function scaleMockup() {
+					var wrapWidth = wrap.offsetWidth,
+						val = wrapWidth / mockupWidth;
+
+					mockup.style.transform = 'scale3d(' + val + ', ' + val + ', 1)';
+				}
+				
+				window.addEventListener( 'resize', resizeHandler );
+
+				function resizeHandler() {
+					function delayed() {
+						resize();
+						resizeTimeout = null;
+					}
+					if ( typeof resizeTimeout != 'undefined' ) {
+						clearTimeout( resizeTimeout );
+					}
+					resizeTimeout = setTimeout( delayed, 50 );
+				}
+
+				function resize() {
+					scaleMockup();
+				}
+			})();
+		</script>
+	</body>
+</html>
